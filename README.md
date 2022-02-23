@@ -12,15 +12,14 @@ which is inversely proportional to the distance between two individuals, if one 
 the other is not, they can transmit the disease to the other individual. This probability is effective only if the
 distance between them is under a threshold value D. If an individual gets infected, they stays infected (i.e.
 there is no cure) and starts to be infectious immediately in the next time frame.
-The mutual infection probability of two individuals Ii
-, Ij is as follows:
+The mutual infection probability of two individuals Ii, Ij is as follows:
 -minimum of (1, K/distance^2) if distance < D
 -0 otherwise
 
 Individuals may wear masks which reduce the infection probability by a factor of λ. This is explained in detail
 below.
-M, N, K, λ, D are system constants and are initialized in the test file, along with the initial state of the individuals.
-The move probabilities are set according to the last move, depending on a grid of possible directions the individual can move in.
+M, N, K, λ, D are system constants and are initialized in evaluator.py, along with the initial state of the individuals.
+The move probabilities are set according to the last move, depending on the surrounding grid of possible directions the individual can move in.
 
 In case of attempting a move to a preoccupied position or outside of the arena, the attempting individual
 will wait for one turn and hope the probability in the next turn will assign them to an empty neighbour
@@ -32,7 +31,7 @@ an individual is wearing a mask, their probability to get infected or transmit t
 individual is reduced by a dividing factor of λ. If the interaction is among two mask wearers, then the probability
 is reduced by dividing it by a factor of λ^2 (1 < λ).
 
-For each time step of the simulation, the function in model.py will be called by the test script
+For each time step of the simulation, the function in model.py will be called by the evaluating script
 and will be expected to return the new coordinates for each individual (made into
 a list).
 
