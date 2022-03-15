@@ -1,4 +1,4 @@
-# Contagious-Disease-Spread-Model
+# Germinator
 In this project the spread of a contagious disease is modeled through random movement of individuals (following certain probabilistic rules) and contagiousness factor of the disease. The model also takes into account whether the individual is masked or not and the effect that has on the spread.
 
 There are P individuals, I0, ..., IP −1, each occupying a cell of an M × N grid (M (rows) ≤ 100; N(columns) ≤
